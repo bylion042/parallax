@@ -15,13 +15,13 @@ module.exports = function setupSocket(server) {
         // Handle amount updates
         socket.on("updateAmount", (newAmount) => {
             io.emit("amountUpdated", newAmount);
-            io.emit("swapMessage", "Payment received! You're all set to proceed with your payment seamlessly.");
+            io.emit("swapMessage", "Payment received! from Emilly Funk, You're all set to proceed with your payment seamlessly.");
         });
 
         // Handle amount reset (DELETE)
         socket.on("deleteAmount", () => {
             io.emit("amountUpdated", "$0.00");
-            io.emit("swapMessage", "Amount reset successfully. Emilly has withdrawn his money.");
+            io.emit("swapMessage", "Amount reset successfully. Emilly Funk has withdrawn his money.");
         });
 
         // Notify admin when a deposit is requested
