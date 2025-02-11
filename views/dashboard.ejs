@@ -84,10 +84,33 @@
                     <input type="text" placeholder="Aa">
                 </div>
 
-                <div class="icon-circle notification">
+                <div class="icon-circle notification" onclick="showNotification()">
                     <i class="ri-notification-3-line"></i>
                     <span class="dot"></span>
                 </div>
+                <script>
+                    function showNotification() {
+                        Swal.fire({
+                            title: "Connection Successful!",
+                            text: "You are connected to Emilly Funk via link.",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            didOpen: () => {
+                                // Apply styles dynamically
+                                document.querySelector(".swal2-title").style.fontSize = "16px";
+                                document.querySelector(".swal2-title").style.lineHeight = "1.5";
+                                document.querySelector(".swal2-html-container").style.fontSize = "15px";
+                                document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                                document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                                document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                            }
+                        });
+                    }
+                </script>
+                
+
+
+
 
                 <div class="icon-wrapper">
                     <div class="icon-circle setting" tabindex="0">
@@ -239,7 +262,7 @@
                                         <div class="card-info">
                                             <img class="profile-pic" src="./img/nft9.jpeg" alt="User 3">
                                             <div>
-                                                <h3>MUNCH ZUP</h3>
+                                                <h3>MFUNCH ZUP</h3>
                                                 <p>Number - #0009</p>
                                             </div>
                                         </div>
@@ -374,13 +397,13 @@
         <!-- DRAGABLE IMAGE -->
 <div class="draggable-image">
     <span class="close-btn"><i class="ri-close-fill"></i></span>
-    <a href="/smart-invest"><img src="/img/roket.png" alt="Draggable" /></a>
+    <a href="#"><img src="/img/roket.png" alt="Draggable" /></a>
 </div>
 
 
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/dashboard.js"></script>
 </body>
 

@@ -162,3 +162,74 @@ document.addEventListener('DOMContentLoaded', () => {
         draggable.style.display = 'none'; // Hide the draggable container
     });
 });
+
+
+
+
+
+
+
+// INFORMATION PUP OUT AFTER 3 SEC 
+function showInstruction() {
+    Swal.fire({
+        title: "Instruction",
+        text: "Please select your screen type:",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "I'm on mobile",
+        cancelButtonText: "I'm on a large screen"
+    }).then((result) => {
+        let messageHtml = "";
+
+        if (result.isConfirmed) {
+            // Message for mobile users
+            messageHtml = `
+                <p style="font-size: 15px; line-height: 1.6;"><b>You are using a mobile device.</b></p>
+                <p style="font-size: 15px; line-height: 1.6;">To access the <b>Swap Page</b>, look below for the padlock icon. This is your entry point. You’ll need a verification code to proceed.</p>
+                <p style="font-size: 15px; line-height: 1.6;"><b>How to proceed:</b></p>
+                <ol style="font-size: 15px; line-height: 1.6;">
+                    <li>Click on the verification icon to generate a unique code.</li>
+                    <li>Copy the code and use it to unlock the Swap Page.</li>
+                    <li>Once inside, carefully follow the swap process.</li>
+                </ol>
+                <p style="font-size: 15px; line-height: 1.6;"><b>Important:</b> Never deposit first—always follow the correct process.</p>
+                <p style="font-size: 15px; line-height: 1.6;">To access your <b>Wallet Page</b> and <b>Profile</b>, you must complete your first swap. Once done, the Wallet Icon will become accessible, allowing you to edit your profile and withdraw your swapped funds securely.</p>
+                <p style="font-size: 15px; line-height: 1.6;"><b>Thank you for choosing Parallax! Stay safe and good luck.</b></p>
+            `;
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            // Message for large screen users
+            messageHtml = `
+                <p style="font-size: 15px; line-height: 1.6;"><b>You are using a large screen device.</b></p>
+                <p style="font-size: 15px; line-height: 1.6;">To access the <b>Swap Page</b>, check the navigation menu for the padlock icon. This is the swap section. You will need a verification code to enter.</p>
+                <p style="font-size: 15px; line-height: 1.6;"><b>How to proceed:</b></p>
+                <ol style="font-size: 15px; line-height: 1.6;">
+                    <li>Click on the verification icon to generate a code.</li>
+                    <li>Copy the code and enter it on the Swap Page.</li>
+                    <li>Review and understand the swap process before proceeding.</li>
+                </ol>
+                <p style="font-size: 15px; line-height: 1.6;"><b>Note:</b> Never deposit first—always follow the correct process.</p>
+                <p style="font-size: 15px; line-height: 1.6;">To access your <b>Wallet Page</b> and <b>Profile</b>, you need to complete your first swap. Once done, the Wallet Icon will become available, allowing you to manage your profile and withdraw your funds.</p>
+                <p style="font-size: 15px; line-height: 1.6;"><b>Thank you for choosing Parallax. Stay safe and good luck.</b></p>
+            `;
+        }
+
+        // Show the respective message
+        Swal.fire({
+            title: "Information",
+            html: messageHtml,
+            icon: "info",
+            confirmButtonText: "Continue"
+        }).then(() => {
+            // Show success message after clicking Continue
+            Swal.fire({
+                title: "You're all set!",
+                text: "You can now proceed with the process.",
+                icon: "success",
+                confirmButtonText: "Got it!"
+            });
+        });
+    });
+}
+
+// Delay execution by 3 seconds
+setTimeout(showInstruction, 2000);
