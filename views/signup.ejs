@@ -38,7 +38,7 @@
     <div class="login-container">
         <div class="icon-wrapper">
             <div class="icon">
-                <i class="ri-mail-check-fill"></i>
+                <i class="ri-key-2-line"></i>
             </div>
         </div>
         <div class="login-box">
@@ -46,18 +46,33 @@
                 <input type="text" name="username" placeholder="Username" class="input-field" required>
                 <input type="email" name="email" placeholder="Email" class="input-field" required>
                 <input type="password" name="password" placeholder="Password" class="input-field" required>
-            
+
                 <div class="checkbox-container">
                     <label>
-                        <input type="checkbox" name="coin">
+                        <input type="checkbox" name="swapOption" class="option">
                         <p>Swap Coin</p>
                     </label>
                     <label>
-                        <input type="checkbox" name="money">
+                        <input type="checkbox" name="swapOption" class="option">
                         <p>Swap Money</p>
                     </label>
                 </div>
-            
+
+                <script>
+                    document.querySelectorAll('.option').forEach((checkbox) => {
+                        checkbox.addEventListener('change', function () {
+                            if (this.checked) {
+                                document.querySelectorAll('.option').forEach((other) => {
+                                    if (other !== this) {
+                                        other.checked = false; // Uncheck other checkboxes
+                                    }
+                                });
+                            }
+                        });
+                    });
+                </script>
+
+
                 <button type="submit" class="sign-in-button">Sign Up</button>
 
                 <div class="chai">
