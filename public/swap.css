@@ -111,7 +111,7 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.4);
+        transform: scale(1.6);
     }
     100% {
         transform: scale(1);
@@ -157,19 +157,61 @@ body {
     color: var(--active-icon-bg);
 }
 
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
 
-button{
+button {
     cursor: pointer;
     border-radius: 5px;
     padding: 10px;
     border: none;
     background: var(--active-icon-bg);
     color: var(--white1);
-}
-button:hover{
-    background: rgb(109, 128, 220);
+    width: 80%;
+    transition: transform 0.5s ease, background 0.5s ease;
 }
 
+button:hover {
+    background: rgb(109, 128, 220);
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.bck-home {
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    background: var(--active-icon-bg);
+    width: 20%;
+    transition: transform 0.5s ease, background 0.5s ease;
+}
+
+.bck-home:hover {
+    background: rgb(109, 128, 220);
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.bck-home a {
+    color: var(--white1);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.bck-home:hover a {
+    transform: scale(0.9); /* Zoom out text effect */
+}
+
+button:hover {
+    transform: scale(0.9); /* Zoom out text effect */
+}
 
 
 

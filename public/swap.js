@@ -34,7 +34,7 @@ socket.on("deleteAmount", function () {
 var socket = io();
 
 document.getElementById("depositBtn").addEventListener("click", function () {
-    alert("An email will be sent to you shortly, please be patient while our system processes the deposit.");
+    alert("Address will be sent to you shortly, please be patient while our system processes the deposit.");
     socket.emit("depositRequest", "User has requested a deposit address.");
 });
 
