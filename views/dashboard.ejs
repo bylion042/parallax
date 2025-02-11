@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- ALL ABOUT SIDE BAR  -->
+        <div class="sidebar">
+
+            <img src="./img/logo.png" alt="logo" width="70%" class="logo">
+
+            <div class="link-container">
+                <a href="#dashboard" id="dashboard" class="active"><i class="ri-home-4-line"></i> Dashboard</a>
+
+                <a href="#wallet" id="wallet" class="wallet-link">
+                    <i class="ri-wallet-line"></i> Wallet
+                    <span class="tooltip">You have nothing here, make your first swap to access the page and withdraw too.</span>
+                </a>
+                
+                <!-- <a href="#wallet" id="wallet"><i class="ri-wallet-line"></i> Wallet</a> -->
+                <a href="#getcode" id="getcode"><i class="ri-radar-line"></i> Get Code</a>
+                <a href="#swap" id="swap"><i class="ri-exchange-dollar-line"></i> Swap</a>
+                <a href="#help" id="help"><i class="ri-customer-service-2-line"></i> Help Center</a>
+                <a href="/" id="logout"><i class="ri-logout-box-line"></i> Log Out</a>
+            </div>
+
+
+            <div class="toggle-switch">
+                <input type="checkbox" id="mode-switch" class="mode-switch">
+                <label for="mode-switch" class="switch-label">
+                    <span class="sun-icon"><i class="ri-sun-fill"></i></span>
+                    <span class="moon-icon"><i class="ri-moon-fill"></i></span>
+                </label>
+            </div>
+        </div>
+
+
+
+        <!-- NAV FOR SMALL SCREEN  -->
+        <div class="small-sreen-nav">
+
+            <div class="link-container">
+                <a href="#user" id="wallet"><i class="ri-user-line"></i></a>
+
+                <a href="#wallet" id="wallet" class="wallet-link">
+                    <i class="ri-wallet-line"></i>
+                    <span class="tooltip">You have nothing here, make your first swap to access the page and withdraw too.</span>
+                </a>
+
+                <a href="#dashboard" id="dashboard" class="active"><i class="ri-home-4-line"></i></a>
+                <a href="#getcode" id="getcode"><i class="ri-radar-line"></i></a>
+                <a href="#swap" id="swap"><i class="ri-exchange-dollar-line"></i></a>
+                
+                <!-- <a href="#user" id="help"><i class="ri-user-line"></i></a> -->
+                <a href="/" id="logout"><i class="ri-logout-box-r-line"></i></a>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ALL ABOUT MENU  -->
+        <div class="menu">
+
+            <!-- all about header  -->
+            <div class="header">
+                <div class="search-container">
+                    <i class="ri-search-line search-icon"></i>
+                    <input type="text" placeholder="Aa">
+                </div>
+
+                <div class="icon-circle notification">
+                    <i class="ri-notification-3-line"></i>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="icon-wrapper">
+                    <div class="icon-circle setting" tabindex="0">
+                        <i class="ri-image-fill"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <h1 class="dropdown-title">Cool Profile Collections</h1>
+                        <img src="./img/nft1.jpeg" alt="Image 1">
+                        <img src="./img/nft2.jpeg" alt="Image 2">
+                        <img src="./img/nft3.jpeg" alt="Image 3">
+                        <img src="./img/nft4.jpeg" alt="Image 4">
+                        <img src="./img/nft5.jpeg" alt="Image 5">
+                        <img src="./img/nft6.jpeg" alt="Image 6">
+                        <img src="./img/nft7.jpeg" alt="Image 7">
+                        <img src="./img/nft8.jpeg" alt="Image 8">
+                        <img src="./img/nft9.jpeg" alt="Image 9">
+                        <img src="./img/nft10.jpeg" alt="Image 10">
+                        <img src="./img/nft11.jpeg" alt="Image 11">
+                        <img src="./img/nft12.jpeg" alt="Image 12">
+                    </div>
+                </div>
+                <!-- THE BLURE WHEN DROP DOWN HAPPPENS   -->
+                <div class="blur-bg"></div>
+            </div>
+
+
+
+            <!-- all about menu-container-->
+            <div class="main-menu-container">
+                <div class="main-menu">
+                    <!-- ALL ABOUT MAIN-MENU1  -->
+                    <div class="main-menu1">
+                        <div class="trending-container">
+                            <!-- Sidebar Title -->
+                            <div class="sidetext">
+                                <h2>OUR - ADMINZ</h2>
+                            </div>
+
+                            <div class="slider-container">
+                                <div class="nft-cards">
+                                    <!-- NFT Card 1 -->
+                                    <div class="nft-card">
+                                        <div class="price-tag">$ 700</div>
+                                        <img src="./img/nft8.jpeg" alt="NFT 1" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft5.jpeg" alt="User 1">
+                                            <div>
+                                                <h3>KENY CHOKS</h3>
+                                                <p>Number - #0001</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 2 -->
+                                    <div class="nft-card">
+                                        <div class="price-tag">$ 976</div>
+                                        <img src="./img/nft10.jpeg" alt="NFT 2" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft7.jpeg" alt="User 2">
+                                            <div>
+                                                <h3>FRANK MUCK</h3>
+                                                <p>Number - #0002</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 3 -->
+                                    <div class="nft-card">
+                                        <div class="price-tag">$ 158</div>
+                                        <img src="./img/nft1.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft6.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>EMILLY FUNK</h3>
+                                                <p>Number - #0003</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 4 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 131</div>
+                                        <img src="./img/nft2.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft1.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>PUNK PUNK</h3>
+                                                <p>Number - #0004</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 5 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 111</div>
+                                        <img src="./img/nft3.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft2.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>FELIX SHILL</h3>
+                                                <p>Number - #0005</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 6 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 10</div>
+                                        <img src="./img/nft4.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft3.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>WILLIS FUN</h3>
+                                                <p>Number - #0006</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 7 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 298</div>
+                                        <img src="./img/nft5.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft4.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>HUN SPORT</h3>
+                                                <p>Number - #0007</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 8 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 19</div>
+                                        <img src="./img/nft6.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft8.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>FUNNY FUNNY</h3>
+                                                <p>Number - #0008</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 9 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 8</div>
+                                        <img src="./img/nft7.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft9.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>MUNCH ZUP</h3>
+                                                <p>Number - #0009</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- NFT Card 10 -->
+                                    <div class="nft-card close">
+                                        <div class="price-tag">$ 58</div>
+                                        <img src="./img/nft9.jpeg" alt="NFT 3" class="nft-img">
+                                        <div class="card-info">
+                                            <img class="profile-pic" src="./img/nft10.jpeg" alt="User 3">
+                                            <div>
+                                                <h3>ZOOM ZOOM</h3>
+                                                <p>Number - #0010</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- ALL ABOUT MAIN-MENU2  -->
+
+                    <div class="main-menu2">
+                        <div class="top-creators-container">
+                            <div class="top-creators-header">
+                                <h2>TOP - CREATORS</h2>
+                                <a href="#" class="view-all">Check Online <i class="ri-arrow-right-line"></i></a>
+                            </div>
+
+                            <table class="creators-table">
+                                <thead>
+                                    <tr>
+                                        <th>Creators</th>
+                                        <th>Volums</th>
+                                        <th>Swaps</th>
+                                        <th>Items</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="rank">1)</span> Kenedy</td>
+                                        <td> $132 bn</td>
+                                        <td>USD</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="rank">2)</span> Hill top</td>
+                                        <td>$42 bn</td>
+                                        <td>SOL</td>
+                                        <td>14</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="rank">3)</span> Philip</td>
+                                        <td> $63 bn</td>
+                                        <td>ETH</td>
+                                        <td>22</td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--ALL  ABOUT BALANCE  -->
+                <div class="container">
+                    <div class="balance-section">
+                        <h2>BALANCE</h2>
+                        <div class="balance-amount">$ 0.00</div>
+                        <svg class="balance-graph" width="200" height="150" viewBox="0 0 151 100" fill="none">
+                            <path
+                                d="M2.67026 143.865L2.64939 137.446C2.62851 131.028 2.58676 118.191 5.5615 114.27C8.53624 110.348 14.5275 115.342 20.0125 118.84C25.4975 122.338 30.4762 124.34 33.0058 119.103C35.5354 113.866 35.6158 101.39 38.0798 95.9589C40.5438 90.5279 45.3913 92.1417 49.9758 92.9779C54.5602 93.8141 58.8815 93.8727 64.0498 96.4343C69.218 98.9959 75.2331 104.061 77.8817 99.1753C80.5303 94.29 79.8125 79.4549 81.9393 73.0274C84.0661 66.5999 89.0376 68.5799 92.9747 67.5028C96.9117 66.4257 99.8145 62.2915 101.346 54.1032C102.877 45.9149 103.036 33.6724 105.679 28.7706C108.322 23.8688 113.449 26.3076 117.731 26.2498C122.013 26.1921 125.45 23.6379 129.283 22.2541C133.117 20.8702 137.346 20.6568 140.524 17.3359C143.702 14.015 145.828 7.58662 146.891 4.37242L147.955 1.15821"
+                                stroke="#A4308A" stroke-width="5" />
+                        </svg>
+                        <button class="view-all-button">view all</button>
+                    </div>
+
+                    <div class="nft-section">
+                        <img src="./img/nft3.jpeg" alt="NFT of the Day">
+                        <div class="nft-details">
+                            <h3><%= user ? user.username : 'Guest' %></h3>
+                            <p><%= user ? user.email : 'Guest' %></p> <!-- Show user's email -->
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- LAST LOGO BIG SMALL SCREEN  -->
+        <div class="big-logo">
+            <h1>PARALLAX</h1>
+            <img src="./img/logo.png" alt="logo" width="100%" class="logo1">
+        </div>
+
+
+
+    </div>
+
+
+    <script src="/dashboard.js"></script>
+</body>
+
+</html>

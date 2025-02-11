@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLAX ADMIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/admin.css">
+</head>
+
+<body>
+
+    <h2>Admin Panel <i class="ri-user-settings-line"></i></h2>
+
+    <div class="container">
+        <div class="section">
+            <h4>Update and Delete Amount</h4>
+            <input type="text" id="amountInput" placeholder="enter new amount">
+            <button onclick="updateAmount()">Update Amount <i class="ri-edit-line"></i></button>
+            <button onclick="deleteAmount()" class="red">Delete Amount <i class="ri-delete-bin-6-line"></i></button>
+        </div>
+
+        <div class="section">
+            <h4>Update and Delete Address</h4>
+            <textarea id="inputMessage" placeholder="enter coin address"></textarea>
+            <button onclick="sendMessage()">Update Address <i class="ri-edit-line"></i></button>
+        </div>
+    </div>
+    <!-- <button onclick="deleteAddress()" class="red">Delete Address <i class="ri-delete-bin-6-line"></i></button> -->
+
+    
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    
+        function sendMessage() {
+            var address = document.getElementById("inputMessage").value;
+    
+            if (!address) {
+                alert("Please enter a coin address.");
+                return;
+            }
+    
+            socket.emit("sendAddressToSwap", address); // Send the text to swap page
+            alert("Address sent to swap page.");
+        }
+    </script>
+    
+    <script src="/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="swap.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="payment-section">
+            <div class="image-container">
+                <img src="/img/nft11.jpeg" alt="Image 1" class="image">
+                <div class="center-icon">
+                    <i class="ri-arrow-left-right-line"></i>
+                </div>
+                <img src="/img/nft3.jpeg" alt="Image 2" class="image">
+            </div>
+
+            <div class="payment-item">
+                <div class="amount">
+                    <div class="me">
+                        <h6>Amount</h6>
+                        <h2 id="amountDisplay">$0.00</h2> <!-- Default value, replaced by JavaScript -->
+                    </div>
+                    <div class="mugu">
+                        <h6>Amount</h6>
+                        <h2>$0.00</h2>
+                    </div>
+                </div>
+
+                <div class="my-side">
+                    <div class="me">
+                        <h5>Emilly</h5>
+                        <h6 class="email">emilly3@gmail.com</h6>
+                    </div>
+                    <div class="mugu">
+                        <h5>
+                            <%= user && user.username ? user.username : 'Guest' %>
+                        </h5> <!-- Display username -->
+                        <h6 class="email mgbada">
+                            <%= user && user.email ? user.email : 'No Email' %>
+                        </h6> <!-- Display email -->
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="center-icon">
+                <i class="ri-arrow-up-down-line"></i>
+            </div>
+
+            <div class="payment-item">
+                <div class="hold">
+                    <h5>Warning</h5>
+                    <i class="ri-alarm-warning-line"></i>
+                </div>
+                <p>
+                    Please note that you should never make a deposit first until the designated money holder has
+                    successfully completed their deposit and it has been confirmed. Once their deposit reflects, you can
+                    proceed with yours confidently.
+                    After making your deposit, you will gain access to the wallet page within the dashboard, where you
+                    can explore its various features and manage your transactions securely.
+                </p>
+                <button id="depositBtn">Deposit Coin <i class="ri-coin-line"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    var socket = io();
+
+    socket.on("sendAddressToSwap", function (address) {
+        Swal.fire({
+            title: 'New Address Received!',
+            text: address,
+            icon: 'success',
+            confirmButtonText: 'Copy'
+        }).then(() => {
+            navigator.clipboard.writeText(address)
+                .then(() => Swal.fire('Copied!', 'Address copied to clipboard.', 'success'))
+                .catch(() => Swal.fire('Oops!', 'Failed to copy.', 'error'));
+        });
+    });
+</script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/swap.js"></script>
+</body>
+
+</html>

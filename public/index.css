@@ -1,0 +1,257 @@
+body {
+    background-color: var(--color-neutral-900);
+    color: var(--color-light);
+    font-size: var(--size-font);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cloneable {
+    padding: var(--container-padding);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+  }
+  .parallax__fade {
+    --color-dark-rgb: 0, 0, 0;
+      background: linear-gradient(to top, rgba(var(--color-dark-rgb), 1) 0%, rgba(var(--color-dark-rgb), 0.738) 19%, rgba(var(--color-dark-rgb), 0.541) 34%, rgba(var(--color-dark-rgb), 0.382) 47%, rgba(var(--color-dark-rgb), 0.278) 56.5%, rgba(var(--color-dark-rgb), 0.194) 65%, rgba(var(--color-dark-rgb), 0.126) 73%, rgba(var(--color-dark-rgb), 0.075) 80.2%, rgba(var(--color-dark-rgb), 0.042) 86.1%, rgba(var(--color-dark-rgb), 0.021) 91%, rgba(var(--color-dark-rgb), 0.008) 95.2%, rgba(var(--color-dark-rgb), 0.002) 98.2%, transparent 100%);
+  }
+  .osmo-icon-svg {
+    width: 8em;
+    position: relative;
+  }
+  .parallax__header {
+    z-index: 2;
+    padding: var(--section-padding) var(--container-padding);
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    display: flex;
+    position: relative;
+  }
+  .parallax {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .parallax__content {
+    padding: var(--section-padding) var(--container-padding);
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .logo{
+    margin-top: 20rem;
+  }
+  
+  .web-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 1000;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 15px;
+    color: var(--color-light);
+  }
+  .web-description h2 {
+    font-size: 2.30rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: PP Neue Corp Wide, sans-serif;
+  
+  }
+  .web-description p {
+    line-height: 4rem;
+    font-size: 13.50px;
+    font-family: PP Neue Corp Wide, sans-serif;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 50px;
+    margin-top: 2rem;
+  }
+  .social-icons a {
+    color: white;
+    font-size: 60px; 
+    text-decoration: none;
+    transition: color 0.5s ease;
+  }
+  .social-icons a:hover {
+    color: #5e6dcd; 
+  }
+  
+  
+  
+  .parallax__visuals {
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .parallax__placeholder {
+    z-index: 0;
+    opacity: 0;
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .parallax__layers {
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .parallax__fade {
+    z-index: 30;
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .parallax__black-line-overflow {
+    z-index: 20;
+    background-color: var(--color-black);
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+  .parallax__title {
+    pointer-events: auto;
+    text-align: center;
+    text-transform: none;
+    margin-top: 0;
+    margin-bottom: 0.1em;
+    margin-right: .075em;
+    font-family: PP Neue Corp Wide, sans-serif;
+    font-size: 8rem; 
+    font-weight: 800;
+    line-height: 1;
+    position: relative;
+  }
+  .parallax__radial-gradient {
+    z-index: 10;
+    background-image: radial-gradient(circle farthest-corner at 50% 50%, transparent, var(--color-black));
+    opacity: .5;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    position: fixed;
+    inset: 0;
+  }
+  .parallax__layer-title {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .parallax__layer-img {
+    pointer-events: none;
+    object-fit: cover;
+    width: 100%;
+    max-width: none;
+    height: 117.5%;
+    position: absolute;
+    top: -17.5%;
+    left: 0;
+  }
+  .parallax__layer-img.is-third {
+    top: -20%;
+  }
+  @font-face {
+    font-family: 'PP Neue Corp Wide';
+    src: url('https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717e399d30a606fed425914_PPNeueCorp-WideUltrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  /* Arrow styling */
+  .arrow-right {
+    z-index: 10;
+    font-size: 4rem;  
+    position: fixed; 
+    bottom: 100px;    
+    right: 40px;      
+    color: white;    
+    cursor: pointer; 
+    display: inline-block; 
+    animation: zoom 2s infinite ease-in-out;
+  }
+
+.arrow-right a{
+  text-decoration: none;
+}
+
+  .arrow-right:hover {
+    color: #5e6dcd;
+  }
+  @keyframes zoom {
+    0%, 100% {
+      transform: scale(2);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Tablet (768px and up) */
+  @media (min-width: 768px) {
+  
+    .logo{
+      margin-top: 0rem;
+    }
+    .web-description p {
+      line-height: 3rem;
+      font-size: 17px;
+      max-width: 900px;
+      font-family: PP Neue Corp Wide, sans-serif;
+    }
+    
+  
+  
+  
+  /* Arrow styling */
+  .arrow-right { 
+    font-size: 3rem;  
+    bottom: 100px;    
+  }
+  }
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/login&signup.css">
+</head>
+
+<body>
+
+    <!-- ALL ABOUT WELCOM SECTION  -->
+    <div class="dera">
+        <div class="pium">
+            <div class="welcome-section">
+                <div class="content">
+                    <h1>Welcome to <br> PARALLAX Exchange.</h1>
+
+                    <p>
+                        Seamlessly swap coins for cash in seconds with our cutting-edge parallax web! Our advanced
+                        system is designed for speed, security, and ease, ensuring instant conversions with just a few
+                        clicks. No delays, no hassle—just fast, efficient transactions that put your money where you
+                        need it. Experience the future of seamless digital exchange today.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="green"></div>
+
+    </div>
+
+
+    <!-- ALL ABOUT LOGIN SECTION  -->
+    <div class="login-container">
+        <div class="icon-wrapper">
+            <div class="icon">
+                <i class="ri-mail-check-fill"></i>
+            </div>
+        </div>
+        <div class="login-box">
+            <form action="/auth/signup" method="POST">
+                <input type="text" name="username" placeholder="Username" class="input-field" required>
+                <input type="email" name="email" placeholder="Email" class="input-field" required>
+                <input type="password" name="password" placeholder="Password" class="input-field" required>
+            
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" name="coin">
+                        <p>Swap Coin</p>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="money">
+                        <p>Swap Money</p>
+                    </label>
+                </div>
+            
+                <button type="submit" class="sign-in-button">Sign Up</button>
+
+                <div class="chai">
+                    <a href="/login" class="no-account">Already have an account?</a>
+                    <a href="/" class="home">Home</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</body>
+
+</html>
