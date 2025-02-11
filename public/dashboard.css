@@ -621,6 +621,56 @@ body {
 }
 
 
+/* DRAGABLE IMAGE  */
+.draggable-image {
+    position: fixed;
+    top: 60%;
+    /* Middle of the screen vertically */
+    right: 0;
+    /* Right corner */
+    transform: translate(0, -50%);
+    /* Center the image vertically */
+    z-index: 1000;
+    /* Ensure it's on top of other elements */
+    cursor: grab;
+    /* Indicate that it's draggable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.draggable-image img {
+    max-width: 100px;
+    border-radius: 10px;
+    user-select: none;
+}
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    color: var(--white1);
+    background: var(--active-icon-bg);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+
+
+
+
+
 
 
 
@@ -653,9 +703,8 @@ body {
         left: 0;
         width: 100%;
         background: var(--eerie-black3);
-        padding: 1-px 0;
+        padding: 10px 0;
         padding-top: 20px;
-        padding-bottom: 10px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
@@ -681,22 +730,9 @@ body {
         transform: scale(1.1);
     }
 
-    .st{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .st p{
-        color: var(--gray);
-        font-size: 10px;
-        font-weight: bold;
-    }
-
     .link-container a.active {
         color: var(--white1);
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     .wallet-link .tooltip {

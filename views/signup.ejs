@@ -45,7 +45,11 @@
             <form action="/auth/signup" method="POST">
                 <input type="text" name="username" placeholder="Username" class="input-field" required>
                 <input type="email" name="email" placeholder="Email" class="input-field" required>
-                <input type="password" name="password" placeholder="Password" class="input-field" required>
+
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Password" class="input-field" required>
+                    <i class="ri-eye-off-line" id="togglePassword"></i>
+                </div>
 
                 <div class="checkbox-container">
                     <label>
@@ -82,6 +86,24 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", function () {
+    var passwordField = document.getElementById("password");
+    var icon = this;
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        icon.classList.remove("ri-eye-off-line");
+        icon.classList.add("ri-eye-line"); // Open eye icon
+    } else {
+        passwordField.type = "password";
+        icon.classList.remove("ri-eye-line");
+        icon.classList.add("ri-eye-off-line"); // Closed eye icon
+    }
+});
+
+    </script>
 
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
