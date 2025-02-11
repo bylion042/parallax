@@ -170,14 +170,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // INFORMATION PUP OUT AFTER 3 SEC 
-    function showInstruction() {
+function showInstruction() {
+    Swal.fire({
+        title: "Instruction",
+        text: "Please select your screen type:",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "I'm on mobile",
+        cancelButtonText: "I'm on a large screen",
+        didOpen: () => {
+            document.querySelector(".swal2-title").style.fontSize = "16px";
+            document.querySelector(".swal2-title").style.lineHeight = "1.5";
+            document.querySelector(".swal2-html-container").style.fontSize = "15px";
+            document.querySelector(".swal2-html-container").style.lineHeight = "1.6";
+            document.querySelector(".swal2-confirm").style.fontSize = "13px";
+            document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+
+            // Apply the same styles to the cancel button
+            document.querySelector(".swal2-cancel").style.fontSize = "13px";
+            document.querySelector(".swal2-cancel").style.padding = "8px 16px";
+            document.querySelector(".swal2-cancel").style.color = "#fff"; // White text
+        }
+    }).then((result) => {
+        let messageHtml = "";
+
+        if (result.isConfirmed) {
+            // Message for mobile users
+            messageHtml = `
+                <p><b>You are using a mobile device.</b></p>
+                <p>To access the <b>Swap Page</b>, look below for the padlock icon. This is your entry point. You’ll need a verification code to proceed.</p>
+                <p><b>How to proceed:</b></p>
+                <ol>
+                    <li>Click on the verification icon to generate a unique code.</li>
+                    <li>Copy the code and use it to unlock the Swap Page.</li>
+                    <li>Once inside, carefully follow the swap process.</li>
+                </ol>
+                <p><b>Important:</b> Never deposit first—always follow the correct process.</p>
+                <p>To access your <b>Wallet Page</b> and <b>Profile</b>, you must complete your first swap. Once done, the Wallet Icon will become accessible, allowing you to edit your profile and withdraw your swapped funds securely.</p>
+                <p><b>Thank you for choosing Parallax! Stay safe and good luck.</b></p>
+            `;
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            // Message for large screen users
+            messageHtml = `
+                <p><b>You are using a large screen device.</b></p>
+                <p>To access the <b>Swap Page</b>, check the navigation menu for the padlock icon. This is the swap section. You will need a verification code to enter.</p>
+                <p><b>How to proceed:</b></p>
+                <ol>
+                    <li>Click on the verification icon to generate a code.</li>
+                    <li>Copy the code and enter it on the Swap Page.</li>
+                    <li>Review and understand the swap process before proceeding.</li>
+                </ol>
+                <p><b>Note:</b> Never deposit first—always follow the correct process.</p>
+                <p>To access your <b>Wallet Page</b> and <b>Profile</b>, you need to complete your first swap. Once done, the Wallet Icon will become available, allowing you to manage your profile and withdraw your funds.</p>
+                <p><b>Thank you for choosing Parallax. Stay safe and good luck.</b></p>
+            `;
+        }
+
+        // Show the respective message
         Swal.fire({
-            title: "Instruction",
-            text: "Please select your screen type:",
+            title: "Information",
+            html: messageHtml,
             icon: "info",
-            showCancelButton: true,
-            confirmButtonText: "I'm on mobile",
-            cancelButtonText: "I'm on a large screen",
+            confirmButtonText: "Continue",
             didOpen: () => {
                 document.querySelector(".swal2-title").style.fontSize = "16px";
                 document.querySelector(".swal2-title").style.lineHeight = "1.5";
@@ -186,47 +240,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(".swal2-confirm").style.fontSize = "13px";
                 document.querySelector(".swal2-confirm").style.padding = "8px 16px";
             }
-        }).then((result) => {
-            let messageHtml = "";
-
-            if (result.isConfirmed) {
-                // Message for mobile users
-                messageHtml = `
-                    <p><b>You are using a mobile device.</b></p>
-                    <p>To access the <b>Swap Page</b>, look below for the padlock icon. This is your entry point. You’ll need a verification code to proceed.</p>
-                    <p><b>How to proceed:</b></p>
-                    <ol>
-                        <li>Click on the verification icon to generate a unique code.</li>
-                        <li>Copy the code and use it to unlock the Swap Page.</li>
-                        <li>Once inside, carefully follow the swap process.</li>
-                    </ol>
-                    <p><b>Important:</b> Never deposit first—always follow the correct process.</p>
-                    <p>To access your <b>Wallet Page</b> and <b>Profile</b>, you must complete your first swap. Once done, the Wallet Icon will become accessible, allowing you to edit your profile and withdraw your swapped funds securely.</p>
-                    <p><b>Thank you for choosing Parallax! Stay safe and good luck.</b></p>
-                `;
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                // Message for large screen users
-                messageHtml = `
-                    <p><b>You are using a large screen device.</b></p>
-                    <p>To access the <b>Swap Page</b>, check the navigation menu for the padlock icon. This is the swap section. You will need a verification code to enter.</p>
-                    <p><b>How to proceed:</b></p>
-                    <ol>
-                        <li>Click on the verification icon to generate a code.</li>
-                        <li>Copy the code and enter it on the Swap Page.</li>
-                        <li>Review and understand the swap process before proceeding.</li>
-                    </ol>
-                    <p><b>Note:</b> Never deposit first—always follow the correct process.</p>
-                    <p>To access your <b>Wallet Page</b> and <b>Profile</b>, you need to complete your first swap. Once done, the Wallet Icon will become available, allowing you to manage your profile and withdraw your funds.</p>
-                    <p><b>Thank you for choosing Parallax. Stay safe and good luck.</b></p>
-                `;
-            }
-
-            // Show the respective message
+        }).then(() => {
+            // Show success message after clicking Continue
             Swal.fire({
-                title: "Information",
-                html: messageHtml,
-                icon: "info",
-                confirmButtonText: "Continue",
+                title: "You're all set!",
+                text: "You can now proceed with the process.",
+                icon: "success",
+                confirmButtonText: "Got it!",
                 didOpen: () => {
                     document.querySelector(".swal2-title").style.fontSize = "16px";
                     document.querySelector(".swal2-title").style.lineHeight = "1.5";
@@ -235,26 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelector(".swal2-confirm").style.fontSize = "13px";
                     document.querySelector(".swal2-confirm").style.padding = "8px 16px";
                 }
-            }).then(() => {
-                // Show success message after clicking Continue
-                Swal.fire({
-                    title: "You're all set!",
-                    text: "You can now proceed with the process.",
-                    icon: "success",
-                    confirmButtonText: "Got it!",
-                    didOpen: () => {
-                        document.querySelector(".swal2-title").style.fontSize = "16px";
-                        document.querySelector(".swal2-title").style.lineHeight = "1.5";
-                        document.querySelector(".swal2-html-container").style.fontSize = "15px";
-                        document.querySelector(".swal2-html-container").style.lineHeight = "1.6";
-                        document.querySelector(".swal2-confirm").style.fontSize = "13px";
-                        document.querySelector(".swal2-confirm").style.padding = "8px 16px";
-                    }
-                });
             });
         });
-    }
+    });
+}
 
-    // Delay execution by 3 seconds
-    setTimeout(showInstruction, 3000);
+// Delay execution by 3 seconds
+setTimeout(showInstruction, 3000);
+
 

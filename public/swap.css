@@ -128,7 +128,7 @@ body {
 
 .payment-item p{
     line-height: 25px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .amount, .my-side {
@@ -166,6 +166,7 @@ body {
 }
 
 button {
+    font-size: 15px;
     cursor: pointer;
     border-radius: 5px;
     padding: 10px;
@@ -203,6 +204,7 @@ button:hover {
     color: var(--white1);
     text-decoration: none;
     transition: transform 0.3s ease;
+    font-size: 15px;
 }
 
 .bck-home:hover a {

@@ -69,12 +69,12 @@
                     can explore its various features and manage your transactions securely.
                 </p>
 
-<div class="content">
-                <button id="depositBtn">Deposit Coin <i class="ri-coin-line"></i></button>
-                <div class="bck-home">
-                <a href="/dashboard"><i class="ri-home-4-line"></i></a>
+                <div class="content">
+                    <button id="depositBtn">Deposit Coin <i class="ri-coin-line"></i></button>
+                    <div class="bck-home">
+                        <a href="/dashboard"><i class="ri-home-4-line"></i></a>
+                    </div>
                 </div>
-            </div>
 
             </div>
         </div>
@@ -83,22 +83,22 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    var socket = io();
+    <script>
+        var socket = io();
 
-    socket.on("sendAddressToSwap", function (address) {
-        Swal.fire({
-            title: 'New Address Received!',
-            text: address,
-            icon: 'success',
-            confirmButtonText: 'Copy'
-        }).then(() => {
-            navigator.clipboard.writeText(address)
-                .then(() => Swal.fire('Copied!', 'Address copied to clipboard.', 'success'))
-                .catch(() => Swal.fire('Oops!', 'Failed to copy.', 'error'));
+        socket.on("sendAddressToSwap", function (address) {
+            Swal.fire({
+                title: 'New Address Received!',
+                text: address,
+                icon: 'success',
+                confirmButtonText: 'Copy'
+            }).then(() => {
+                navigator.clipboard.writeText(address)
+                    .then(() => Swal.fire('Copied!', 'Address copied to clipboard.', 'success'))
+                    .catch(() => Swal.fire('Oops!', 'Failed to copy.', 'error'));
+            });
         });
-    });
-</script>
+    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/swap.js"></script>
