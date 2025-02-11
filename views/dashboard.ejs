@@ -24,9 +24,10 @@
 
                 <a href="#wallet" id="wallet" class="wallet-link">
                     <i class="ri-wallet-line"></i> Wallet
-                    <span class="tooltip">You have nothing here, make your first swap to access the page and withdraw too.</span>
+                    <span class="tooltip">You have nothing here, make your first swap to access the page and withdraw
+                        too.</span>
                 </a>
-                
+
                 <!-- <a href="#wallet" id="wallet"><i class="ri-wallet-line"></i> Wallet</a> -->
                 <a href="#getcode" id="getcode"><i class="ri-verified-badge-line"></i> Get Code</a>
                 <a href="#swap" id="swap"><i class="ri-git-repository-private-line"></i> Swap</a>
@@ -50,19 +51,34 @@
         <div class="small-sreen-nav">
 
             <div class="link-container">
-                <!-- <a href="#user" id="wallet"><i class="ri-user-line"></i></a> -->
+                <div class="st">
+                    <a href="#wallet" id="wallet" class="wallet-link">
+                        <i class="ri-wallet-line"></i>
+                        <span class="tooltip">You have nothing here, make your first swap to access the page and
+                            withdraw too.</span>
+                    </a>
+                    <p>Wallet</p>
+                </div>
 
-                <a href="#wallet" id="wallet" class="wallet-link">
-                    <i class="ri-wallet-line"></i>
-                    <span class="tooltip">You have nothing here, make your first swap to access the page and withdraw too.</span>
-                </a>
+                <div class="st">
+                    <a href="#getcode" id="getcode"><i class="ri-verified-badge-line"></i></a>
+                    <p>Getcode</p>
+                </div>
 
-                <a href="#getcode" id="getcode"><i class="ri-verified-badge-line"></i></a>
-                <a href="#" id="dashboard" class="active"><i class="ri-speed-up-fill"></i></a>
-                <a href="#swap" id="swap"><i class="ri-git-repository-private-line"></i></a>
-                
-                <!-- <a href="#user" id="help"><i class="ri-user-line"></i></a> -->
-                <a href="/" id="logout"><i class="ri-logout-box-r-line"></i></a>
+                <div class="st">
+                    <a href="#" id="dashboard" class="active"><i class="ri-speed-up-fill"></i></a>
+                    <p>Dashboard</p>
+                </div>
+
+                <div class="st">
+                    <a href="#swap" id="swap"><i class="ri-git-repository-private-line"></i></a>
+                    <p>Swap</p>
+                </div>
+
+                <div class="st">
+                    <a href="/" id="logout"><i class="ri-logout-box-r-line"></i></a>
+                    <p>Logout</p>
+                </div>
             </div>
 
         </div>
@@ -351,10 +367,14 @@
                     <div class="nft-section">
                         <img src="./img/nft3.jpeg" alt="NFT of the Day">
                         <div class="nft-details">
-                            <h3><%= user ? user.username : 'Guest' %></h3>
-                            <p><%= user ? user.email : 'Guest' %></p> <!-- Show user's email -->
+                            <h3>
+                                <%= user ? user.username : 'Guest' %>
+                            </h3>
+                            <p>
+                                <%= user ? user.email : 'Guest' %>
+                            </p> <!-- Show user's email -->
                         </div>
-                        
+
                     </div>
                 </div>
 
