@@ -43,7 +43,7 @@ document.getElementById("depositBtn").addEventListener("click", function () {
 // Listen for text sent from admin and display it in SweetAlert
 socket.on("sendAddressToSwap", function (address) {
     Swal.fire({
-        title: "New Address Received!",
+        title: "New Address Received! copy and complete your deposit",
         text: address,
         icon: "success",
         confirmButtonText: "Copy",
